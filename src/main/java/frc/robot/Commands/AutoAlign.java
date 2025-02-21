@@ -39,7 +39,8 @@ public class AutoAlign extends Command {
     //FIXME the goal value the second parameter is how far to the right you want the robot to go from the tag. A negitive value will be to the left.
     double xSpeed = xController.calculate(targetX, 0); 
 
-    driveSubsystem.drive(xSpeed, xSpeed, xSpeed, false);
+    //X speed in forward or backward direction, y in left or right, All currently relative to robot not field.
+    driveSubsystem.drive(0, xSpeed, 0, false);
   }
 
   // Called once the command ends or is interrupted.
